@@ -1,5 +1,8 @@
-body {
+html, body {
   background-color : beige;
+  min-height: 100%;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 /* snow */
@@ -38,4 +41,282 @@ body {
 @-ms-keyframes snow {
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
   100% {background-position: 50000px 50000px, 10000px 20000px, -10000px 15000px;}
+}
+
+/* styles for smartphones */
+@media handheld and (max-width: 480px),screen and (max-width:480px), screen and (max-device-width:480px) {
+    body { /*전체적인 글꼴과 배경이미지 */
+        font-family: 'Lato', sans-serif;
+        font-size: 50px;
+        /*background-image: url('http://www.clker.com/cliparts/i/4/l/w/R/G/floral-design-gray-hi.png'),url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/background.jpg');
+        background-position: left top,center top;
+        background-size: 250px,cover;
+        background-repeat: no-repeat, no-repeat; */
+        margin: 0;
+        }
+
+        a { /* 링크걸린 부분에 대한 스타일 */
+          color: #204156;
+          text-decoration: none;
+        }
+
+        .page-title { /* 페이지의 제목스타일 */
+          text-align: left;
+          margin : 4px;
+          font-weight: 400;
+        }
+
+        .page-description { /* 페이지의 간략한 설명 스타일 */
+          border: 1px solid #000;
+          margin: 2px;
+          text-align: center;
+          padding: 10px;
+        }
+
+        .basic { /* 사이트에 글이 많이 들어가는 부분 스타일 */
+          font-weight:400;
+          margin: 2px;
+          text-align: left;
+        }
+
+        .column { /* multi-column 스타일 */
+          font-weight:400;
+          text-align: left;
+          column-count: 1;
+          column-rule-style: solid;
+          column-rule-color: #000;
+          column-rule-width: 1px;
+
+          -webkit-column-count: 1; /* Chrome, Safari, Opera */
+          -webkit-column-rule-style: solid;
+          -webkit-column-rule-color: #000;
+          -webkit-column-rule-width: 1px;
+
+          -moz-column-count: 1; /* Firefox */
+          -moz-column-rule-style: solid;
+          -moz-column-rule-color: #000;
+          -moz-column-rule-width: 1px;
+        }
+        nav { /* 네비게이션 바 스타일 */
+          background-color: #FFF;
+        }
+
+        nav ul { /* 네비게이션 바 리스트 스타일 - 작은 화면에서 블록 구조 */
+          display: block;
+        }
+
+        nav li { /* 네비게이션 바 리스트 각 항목 스타일 */
+          display: block;
+          margin: 0;
+          padding: 0 4px;
+        }
+
+        .qa { /* 페이지 하단 버튼 스타일 */
+          float: right;
+          text-shadow: -2px 2px 3px #696969;
+        }
+
+        .qa a { /* 페이지 하단 버튼 링크 스타일 */
+          border: 1px solid #204156;
+          position: relative;
+          cursor: pointer;
+          margin-right: 10px;
+          padding: 4px 8px;
+        }
+
+        .qa a:active { /* 페이지 하단 버튼 눌렸을 때 스타일 */
+          top: 1px;
+        }
+
+        nav a { /* 네비게이션 바 링크 스타일 */
+          height: 20px;
+          line-height: 20px;
+          color: #204156;
+          text-decoration: none;
+        }
+}
+
+/*styles for tablets */
+@media screen and (min-width:481px) and (max-width:1024px) {
+    body { /*전체적인 글꼴과 배경이미지 */
+        font-family: 'Lato', sans-serif;
+        font-size: 50px;
+        background-image: url('http://www.clker.com/cliparts/i/4/l/w/R/G/floral-design-gray-hi.png'),url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/background.jpg');
+        background-position: left top,center top;
+        background-size: 250px,cover;
+        background-repeat: no-repeat, no-repeat;
+        margin: 0;
+        }
+        a { /* 링크걸린 부분에 대한 스타일 */
+          color: #204156;
+          text-decoration: none;
+        }
+
+        .page-title { /* 페이지의 제목스타일 */
+          text-align: center;
+          font-weight: 400;
+        }
+
+        .page-description { /* 페이지의 간략한 설명 스타일 */
+          border: 1px solid #000;
+          margin: 2px;
+          text-align: center;
+          padding: 15px;
+        }
+
+        .basic { /* 사이트에 글이 많이 들어가는 부분 스타일 */
+          font-weight:400;
+          margin: 5px;
+          text-align: left;
+        }
+        .column { /* multi-column 스타일 */
+          font-weight:400;
+          text-align: left;
+          column-count: 1;
+          column-rule-style: solid;
+          column-rule-color: #000;
+          column-rule-width: 1px;
+
+          -webkit-column-count: 1; /* Chrome, Safari, Opera */
+          -webkit-column-rule-style: solid;
+          -webkit-column-rule-color: #000;
+          -webkit-column-rule-width: 1px;
+
+          -moz-column-count: 1; /* Firefox */
+          -moz-column-rule-style: solid;
+          -moz-column-rule-color: #000;
+          -moz-column-rule-width: 1px;
+        }
+        nav { /* 네비게이션 바 스타일 */
+          background-color: #FFF;
+        }
+
+        nav ul { /* 네비게이션 바 리스트 스타일 - 작은 화면에서 블록 구조 */
+          display: block;
+        }
+
+        nav li { /* 네비게이션 바 리스트 각 항목 스타일 */
+          display: block;
+          margin: 0;
+          padding: 0 10px;
+        }
+
+        .qa { /* 페이지 하단 버튼 스타일 */
+          float: right;
+          text-shadow: -2px 2px 3px #696969;
+        }
+
+        .qa a { /* 페이지 하단 버튼 링크 스타일 */
+          border: 1px solid #204156;
+          position: relative;
+          cursor: pointer;
+          margin-right: 20px;
+          padding: 10px 20px;
+        }
+
+        .qa a:active { /* 페이지 하단 버튼 눌렸을 때 스타일 */
+          top: 3px;
+        }
+
+        nav a { /* 네비게이션 바 링크 스타일 */
+          height: 45px;
+          line-height: 45px;
+          color: #204156;
+          text-decoration: none;
+        }
+
+}
+
+/*styles for desktops*/
+@media screen and (min-width:1025px){
+    body { /*전체적인 글꼴과 배경이미지 */
+        font-family: 'Lato', sans-serif;
+        /*background-image: url('http://www.clker.com/cliparts/i/4/l/w/R/G/floral-design-gray-hi.png'),url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/background.jpg');
+        background-position: left top,center top;
+        background-size: 500px,cover;
+        background-repeat: no-repeat, no-repeat;*/
+        margin: 0;
+        }
+
+        a { /* 링크걸린 부분에 대한 스타일 */
+          color: #204156;
+          text-decoration: none;
+        }
+
+        .page-title { /* 페이지의 제목스타일 */
+          text-align: left;
+          margin-left: 50px;
+          font-weight: 400;
+        }
+
+        .page-description { /* 페이지의 간략한 설명 스타일 */
+          border: 1px solid #000;
+          margin: 2px;
+          text-align: center;
+          padding: 30px;
+        }
+
+        .basic { /* 사이트에 글이 많이 들어가는 부분 스타일 */
+          font-weight:300;
+          margin-left: 50px;
+          text-align: left;
+        }
+
+        .column { /* multi-column 스타일 */
+            font-weight:300;
+            text-align: left;
+            column-count: 3;
+            column-rule-style: solid;
+            column-rule-color: #000;
+            column-rule-width: 1px;
+
+            -webkit-column-count: 3; /* Chrome, Safari, Opera */
+            -webkit-column-rule-style: solid;
+            -webkit-column-rule-color: #000;
+            -webkit-column-rule-width: 1px;
+
+            -moz-column-count: 3; /* Firefox */
+            -moz-column-rule-style: solid;
+            -moz-column-rule-color: #000;
+            -moz-column-rule-width: 1px;
+        }
+
+        nav { /* 네비게이션 바 스타일 */
+          background-color: #FFF;
+        }
+
+        nav ul { /* 네비게이션 바 리스트 스타일 - 작은 화면에서 인라인 구조 */
+          display: inline;
+        }
+
+        nav li { /* 네비게이션 바 리스트 각 항목 스타일 */
+          display: inline;
+          margin: 0;
+          padding: 0 10px;
+        }
+
+        .qa { /* 페이지 하단 버튼 스타일 */
+          float: right;
+          text-shadow: -2px 2px 3px #696969;
+        }
+
+        .qa a { /* 페이지 하단 버튼 링크 스타일 */
+          border: 1px solid #204156;
+          position: relative;
+          cursor: pointer;
+          margin-right: 30px;
+          padding: 10px 20px;
+        }
+
+        .qa a:active { /* 페이지 하단 버튼 눌렸을 때 스타일 */
+          top: 3px;
+        }
+
+        nav a { /* 네비게이션 바 링크 스타일 */
+          height: 60px;
+          line-height: 60px;
+          color: #204156;
+          text-decoration: none;
+        }
+
 }
