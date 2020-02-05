@@ -11,10 +11,10 @@ html, body {
     body { /*전체적인 글꼴과 배경이미지 */
         font-family: 'Lato', sans-serif;
         font-size: 50px;
-        /*background-image: url('http://www.clker.com/cliparts/i/4/l/w/R/G/floral-design-gray-hi.png'),url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/background.jpg');
+        background-image: url('http://www.clker.com/cliparts/i/4/l/w/R/G/floral-design-gray-hi.png'),url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/background.jpg');
         background-position: left top,center top;
         background-size: 250px,cover;
-        background-repeat: no-repeat, no-repeat; */
+        background-repeat: no-repeat, no-repeat;
         margin: 0;
         }
 
@@ -194,10 +194,10 @@ html, body {
 @media screen and (min-width:1025px){
     body { /*전체적인 글꼴과 배경이미지 */
         font-family: 'Lato', sans-serif;
-        /*background-image: url('http://www.clker.com/cliparts/i/4/l/w/R/G/floral-design-gray-hi.png'),url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/background.jpg');
+        background-image: url('http://www.clker.com/cliparts/i/4/l/w/R/G/floral-design-gray-hi.png'),url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/background.jpg');
         background-position: left top,center top;
         background-size: 500px,cover;
-        background-repeat: no-repeat, no-repeat;*/
+        background-repeat: no-repeat, no-repeat;
         margin: 0;
         }
 
