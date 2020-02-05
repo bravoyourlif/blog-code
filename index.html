@@ -19,27 +19,35 @@
           </ul>
       </nav>
     	<header> <!--이 페이지의 제목 -->
-    		<h1 class="page-title"> Home </h1><hr>
+    		<h1 class="page-title"> Smellscape </h1><hr>
     	</header>
 
       <!--<img class="my-photo" src="main_image.jpeg" alt="chae yeon" />-->
 
       <!--map view-->
-      <div id='map' style='width: 400px; height: 300px;'></div>
+      <div id='map' style='width: 100%;'></div>
       <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhdm95b3VybGlmIiwiYSI6ImNrNjhwNTdubzA2c3Yzb2xhZGoyeW51NHIifQ.lCpoWsjSEPlLr03_VepViw';
         var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11'
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v11'
+          
         });
+
+        // Add geolocate control to the map.
+        '''
+        map.addControl(
+          new mapboxgl.GeolocateControl({
+            positionOptions: {
+            enableHighAccuracy: true
+            },
+            trackUserLocation: true
+          })
+        );'''
       </script>
 
       <section> <!--기본 인적사항 나열-->
         <article> <!--방문한 사람들에게 남기는 메세 -->
-          <h4 style="margin-left: 50px">Profile</h4>
-          <p class="basic">매실이</p>
-          <h4 style="margin-left: 50px">History</h4>
-          <p class="basic">연세대학교 컴퓨터과학과 재학중</p>
           <h4 style="margin-left: 50px">Links</h4>
           <a href="https://www.instagram.com/h.h.cy.cy/" class="basic">instagram @h.h.cy.cy</a>
           <a href="https://www.instagram.com/iwanthamburger/" class="basic">instagram @iwanthamburger</a>
@@ -49,7 +57,7 @@
       </section>
 
       <nav> <!--페이지 하단의 메뉴, 내비게이션 바-->
-        <ul style="position : fixed, bottom : 0">
+        <ul style="position : fixed, bottom : 0;">
           <li><a href="index.html"><b>Home</b></a></li>
           <li><a href="booksandmovies.html"><b>Books and Movies</b></a></li>
           <li><a href="scrap.html"><b>Random Scrap</b></a></li>
