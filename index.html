@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/> <!--부트스트랩 적용-->
     <link rel="stylesheet" href="style.css">
     <title>Happy Chipmunks</title>
+    <!-- mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body>
       <nav> <!--페이지 상단의 메뉴, 내비게이션 바-->
@@ -20,6 +23,16 @@
     	</header>
 
       <!--<img class="my-photo" src="main_image.jpeg" alt="chae yeon" />-->
+
+      <!--map view-->
+      <div id='map' style='width: 400px; height: 300px;'></div>
+      <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhdm95b3VybGlmIiwiYSI6ImNrNjhsNG9qcDA2NWIzaHFiMWE4Z2JyazYifQ.RvO3pTI0w7vRIA3PlYKntg';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11'
+        });
+      </script>
 
       <section> <!--기본 인적사항 나열-->
         <article> <!--방문한 사람들에게 남기는 메세 -->
