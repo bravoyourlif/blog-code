@@ -9,6 +9,10 @@
     <!-- mapbox -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+    	body { margin: 0; padding: 0; }
+    	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
   </head>
   <body>
       <nav> <!--페이지 상단의 메뉴, 내비게이션 바-->
@@ -25,17 +29,17 @@
       <!--<img class="my-photo" src="main_image.jpeg" alt="chae yeon" />-->
 
       <!--map view-->
-      <div id='map' style='width: 100%;'></div>
+      <div id='map'></div>
       <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhdm95b3VybGlmIiwiYSI6ImNrNjhwNTdubzA2c3Yzb2xhZGoyeW51NHIifQ.lCpoWsjSEPlLr03_VepViw';
         var map = new mapboxgl.Map({
           container: 'map',
           style: 'mapbox://styles/mapbox/streets-v11'
-          
+          center: [-96, 37.8], // starting position
+          zoom: 3 // starting zoom
         });
 
         // Add geolocate control to the map.
-        '''
         map.addControl(
           new mapboxgl.GeolocateControl({
             positionOptions: {
@@ -43,7 +47,7 @@
             },
             trackUserLocation: true
           })
-        );'''
+        );
       </script>
 
       <section> <!--기본 인적사항 나열-->
