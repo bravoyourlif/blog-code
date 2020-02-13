@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhdm95b3VybGlmIiwiYSI6ImNrNjhwNTdubzA2c3Yzb2xhZGoyeW51NHIifQ.lCpoWsjSEPlLr03_VepViw';-->
 <html>
   <head>
     <meta charset="utf-8">
@@ -26,28 +27,62 @@
     		<h1 class="page-title"> Smellscape </h1><hr>
     	</header>
 
-      <!--<img class="my-photo" src="main_image.jpeg" alt="chae yeon" />-->
-
-      <!--map view-->
-      <div id='map'></div>
+      <div id="map"></div>
       <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhdm95b3VybGlmIiwiYSI6ImNrNjhwNTdubzA2c3Yzb2xhZGoyeW51NHIifQ.lCpoWsjSEPlLr03_VepViw';
+      	mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhdm95b3VybGlmIiwiYSI6ImNrNjhsNG9qcDA2NWIzaHFiMWE4Z2JyazYifQ.RvO3pTI0w7vRIA3PlYKntg';
         var map = new mapboxgl.Map({
           container: 'map',
-          style: 'mapbox://styles/mapbox/streets-v11'
-          center: [-96, 37.8], // starting position
-          zoom: 3 // starting zoom
+          style: 'mapbox://styles/mapbox/light-v10',
+          zoom: 12,
+          center: [-122.447303, 37.753574]
         });
 
-        // Add geolocate control to the map.
-        map.addControl(
-          new mapboxgl.GeolocateControl({
-            positionOptions: {
-            enableHighAccuracy: true
+        map.on('load', function() {
+          /* Sample feature from the `examples.8fgz4egr` tileset:
+          {
+          "type": "Feature",
+          "properties": {
+          "ethnicity": "White"
+          },
+          "geometry": {
+          "type": "Point",
+          "coordinates": [ -122.447303, 37.753574 ]
+          }
+        }
+        */
+          map.addSource('ethnicity', {
+            type: 'vector',
+            url: 'mapbox://examples.8fgz4egr'
+          });
+          map.addLayer({
+            'id': 'population',
+            'type': 'circle',
+            'source': 'ethnicity',
+            'source-layer': 'sf2010',
+            'paint': {
+            // make circles larger as the user zooms from z12 to z22
+            'circle-radius': {
+            'base': 1.75,
+            'stops': [[12, 2], [22, 180]]
             },
-            trackUserLocation: true
-          })
-        );
+            // color circles by ethnicity, using a match expression
+            // https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
+            'circle-color': [
+              'match',
+              ['get', 'ethnicity'],
+              'White',
+              '#fbb03b',
+              'Black',
+              '#223b53',
+              'Hispanic',
+              '#e55e5e',
+              'Asian',
+              '#3bb2d0',
+              /* other */ '#ccc'
+              ]
+            }
+          });
+        });
       </script>
 
       <section> <!--기본 인적사항 나열-->
