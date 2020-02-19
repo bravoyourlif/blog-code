@@ -6,13 +6,24 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/> <!--부트스트랩 적용-->
     <link rel="stylesheet" href="style.css">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <title>Happy Chipmunks</title>
     <!-- mapbox -->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
     <style>
-    	body { margin: 0; padding: 0; }
-    	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
     </style>
   </head>
   <body>
@@ -24,69 +35,40 @@
           </ul>
       </nav>
     	<header> <!--이 페이지의 제목 -->
-    		<h1 class="page-title"> Smellscape </h1><hr>
+    		<h1 class="page-title"> Emoti-Map </h1><hr>
     	</header>
 
       <div id="map"></div>
+
       <script>
       	mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhdm95b3VybGlmIiwiYSI6ImNrNjhsNG9qcDA2NWIzaHFiMWE4Z2JyazYifQ.RvO3pTI0w7vRIA3PlYKntg';
         var map = new mapboxgl.Map({
           container: 'map',
-          style: 'mapbox://styles/mapbox/light-v10',
-          zoom: 12,
-          center: [-122.447303, 37.753574]
+          style: 'mapbox://styles/bravoyourlif/ck6szj61p01pm1in2o3n5op2r',
+          zoom: 10.7,
+          center: [-73.935242, 40.730610]
         });
 
-        map.on('load', function() {
-          /* Sample feature from the `examples.8fgz4egr` tileset:
-          {
-          "type": "Feature",
-          "properties": {
-          "ethnicity": "White"
-          },
-          "geometry": {
-          "type": "Point",
-          "coordinates": [ -122.447303, 37.753574 ]
-          }
-        }
-        */
-          map.addSource('ethnicity', {
-            type: 'vector',
-            url: 'mapbox://examples.8fgz4egr'
-          });
-          map.addLayer({
-            'id': 'population',
-            'type': 'circle',
-            'source': 'ethnicity',
-            'source-layer': 'sf2010',
-            'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-            'base': 1.75,
-            'stops': [[12, 2], [22, 180]]
-            },
-            // color circles by ethnicity, using a match expression
-            // https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-            'circle-color': [
-              'match',
-              ['get', 'ethnicity'],
-              'White',
-              '#fbb03b',
-              'Black',
-              '#223b53',
-              'Hispanic',
-              '#e55e5e',
-              'Asian',
-              '#3bb2d0',
-              /* other */ '#ccc'
-              ]
-            }
-          });
+        map.on('click', function(e) {
+        var features = map.queryRenderedFeatures(e.point, {
+          layers: ['0218-nyc-christmas'] // replace this with the name of the layer
         });
+
+        if (!features.length) {
+          return;
+        }
+
+        var feature = features[0];
+
+        var popup = new mapboxgl.Popup({ offset: [0, -15] })
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+          .addTo(map);
+      });
       </script>
 
-      <section> <!--기본 인적사항 나열-->
-        <article> <!--방문한 사람들에게 남기는 메세 -->
+      <section>
+        <article>
           <h4 style="margin-left: 50px">Links</h4>
           <a href="https://www.instagram.com/h.h.cy.cy/" class="basic">instagram @h.h.cy.cy</a>
           <a href="https://www.instagram.com/iwanthamburger/" class="basic">instagram @iwanthamburger</a>
