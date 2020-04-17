@@ -33,15 +33,15 @@
       	mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhdm95b3VybGlmIiwiYSI6ImNrNjhsNG9qcDA2NWIzaHFiMWE4Z2JyazYifQ.RvO3pTI0w7vRIA3PlYKntg';
         var map = new mapboxgl.Map({
           container: 'map',
-          style: 'mapbox://styles/bravoyourlif/ck6szj61p01pm1in2o3n5op2r',
+          style: 'mapbox://styles/bravoyourlif/ck93uswcn0g8b1invzr21d07h',
           zoom: 10.7,
-          center: [-73.935242, 40.730610]
-          //center: [37.532600, 127.024612]
+          //center: [-73.935242, 40.730610]
+          center: [37.532600, 127.024612]
         });
 
         map.on('click', function(e) {
         var features = map.queryRenderedFeatures(e.point, {
-          layers: ['0218-nyc-christmas'] // replace this with the name of the layer
+          //layers: ['0218-nyc-christmas'] // replace this with the name of the layer
         });
 
         if (!features.length) {
