@@ -257,7 +257,7 @@ html, body {
 /*styles for desktops*/
 @media screen and (min-width:1025px){
     body { /*전체적인 글꼴과 배경이미지 */
-        font-family: 'Lato', sans-serif;
+        font-family: Cambria, sans-serif;
         /*background-image: url('http://www.clker.com/cliparts/i/4/l/w/R/G/floral-design-gray-hi.png'),url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/background.jpg');*/
         background-color: #FFFFFF;
         background-position: left top,center top;
@@ -346,5 +346,67 @@ html, body {
           color: #204156;
           text-decoration: none;
         }
+        * {
+          box-sizing: border-box;
+        }
 
+        body {
+          background-color: #f1f1f1;
+          padding: 20px;
+          font-family: Arial;
+        }
+
+        /* Center website */
+        .main {
+          max-width: 1000px;
+          margin: auto;
+        }
+
+        h1 {
+          font-size: 50px;
+          word-break: break-all;
+        }
+
+        .row {
+          margin: 8px -16px;
+        }
+
+        /* Add padding BETWEEN each column */
+        .row,
+        .row > .column {
+          padding: 8px;
+        }
+
+        /* Create four equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 25%;
+        }
+
+        /* Clear floats after rows */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        /* Content */
+        .content {
+          background-color: white;
+          padding: 10px;
+        }
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 900px) {
+          .column {
+            width: 50%;
+          }
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .column {
+            width: 100%;
+          }
+        }
 }
