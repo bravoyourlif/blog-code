@@ -9,7 +9,7 @@ html, body {
 /* styles for smartphones */
 @media handheld and (max-width: 480px),screen and (max-width:480px), screen and (max-device-width:480px) {
     body { /*전체적인 글꼴과 배경이미지 */
-        font-family: 'YT Sans', sans-serif;
+        font-family: 'Adobe Song Std L', sans-serif;
         font-size: 50px;
         background-image: url('http://www.clker.com/cliparts/i/4/l/w/R/G/floral-design-gray-hi.png'),url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/background.jpg');
         background-position: left top,center top;
