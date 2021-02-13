@@ -9,7 +9,7 @@ html, body {
 /* styles for smartphones */
 @media handheld and (max-width: 480px),screen and (max-width:480px), screen and (max-device-width:480px) {
     body { /*전체적인 글꼴과 배경이미지 */
-        font-family: 'Cambria', serif;
+        font-family: Cambria, serif;
         font-size: 50px;
         background-image: url('http://www.clker.com/cliparts/i/4/l/w/R/G/floral-design-gray-hi.png'),url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/background.jpg');
         background-position: left top,center top;
@@ -27,6 +27,7 @@ html, body {
           text-align: center;
           margin : 4px;
           font-weight: 400;
+          font-family: Cambria, serif;
         }
 
         .page-description { /* 페이지의 간략한 설명 스타일 */
