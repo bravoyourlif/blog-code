@@ -257,7 +257,7 @@ html, body {
 /*styles for desktops*/
 @media screen and (min-width:1025px){
     body { /*전체적인 글꼴과 배경이미지 */
-        font-family: Cambria, sans-serif;
+        font-family: Cambria, serif;
         /*background-image: url('http://www.clker.com/cliparts/i/4/l/w/R/G/floral-design-gray-hi.png'),url('https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/background.jpg');*/
         background-color: #FFFFFF;
         background-position: left top,center top;
@@ -272,7 +272,7 @@ html, body {
         }
 
         .page-title { /* 페이지의 제목스타일 */
-          text-align: left;
+          text-align: center;
           margin-left: 50px;
           font-weight: 400;
         }
@@ -378,7 +378,7 @@ html, body {
         }
 
         /* Create four equal columns that floats next to each other */
-        .column {
+        .column_new {
           float: left;
           width: 25%;
         }
