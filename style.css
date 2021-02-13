@@ -42,8 +42,8 @@ html, body {
           margin: 2px;
           text-align: left;
         }
-
-        .column { /* multi-column 스타일 */
+    /*
+        .column { /* multi-column 스타일
           font-weight:400;
           text-align: left;
           column-count: 1;
@@ -51,16 +51,16 @@ html, body {
           column-rule-color: #000;
           column-rule-width: 1px;
 
-          -webkit-column-count: 1; /* Chrome, Safari, Opera */
+          -webkit-column-count: 1; /* Chrome, Safari, Opera
           -webkit-column-rule-style: solid;
           -webkit-column-rule-color: #000;
           -webkit-column-rule-width: 1px;
 
-          -moz-column-count: 1; /* Firefox */
+          -moz-column-count: 1; /* Firefox
           -moz-column-rule-style: solid;
           -moz-column-rule-color: #000;
           -moz-column-rule-width: 1px;
-        }
+        }*/
         nav { /* 네비게이션 바 스타일 */
           background-color: #FFF;
         }
