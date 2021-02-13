@@ -24,7 +24,7 @@ html, body {
         }
 
         .page-title { /* 페이지의 제목스타일 */
-          text-align: left;
+          text-align: center;
           margin : 4px;
           font-weight: 400;
         }
