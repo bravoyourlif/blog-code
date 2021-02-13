@@ -1,71 +1,43 @@
 <!DOCTYPE html>
-<!--mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhdm95b3VybGlmIiwiYSI6ImNrNjhwNTdubzA2c3Yzb2xhZGoyeW51NHIifQ.lCpoWsjSEPlLr03_VepViw';-->
+
 <html>
-  <head>
-    <meta charset="utf-8">
+<head>
+    <title>Random Scrap</title> <!--이 페이지의 제목 -->
+    <meta charset="utf-8"/>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/> <!--부트스트랩 적용-->
-    <link rel="stylesheet" href="style.css">
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <title>Happy Chipmunks</title>
-    <!-- mapbox -->
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-      #map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-      }
-    </style>
-    </style>
-  </head>
-  <body>
-      <div id="map"></div>
-       <nav> <!--페이지 상단의 메뉴, 내비게이션 바-->
+<body>
+    <nav> <!--페이지 상단의 메뉴, 내비게이션 바-->
         <ul>
           <li><a href="index.html"><b>Home</b></a></li>
-          <li><a href="booksandmovies.html"><b>Books and Movies</b></a></li>
+          <li><a href="newpage.html"><b>Books and Movies</b></a></li>
           <li><a href="scrap.html"><b>Random Scrap</b></a></li>
         </ul>
-      </nav>
-    	<header> <!--이 페이지의 제목 -->
+    </nav>
+  	<header> <!--이 페이지의 제목 -->
   		<h1 class="page-title"> Random Scraps </h1><hr>
-  	  </header>
-      <script>
-      	mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhdm95b3VybGlmIiwiYSI6ImNrNjhsNG9qcDA2NWIzaHFiMWE4Z2JyazYifQ.RvO3pTI0w7vRIA3PlYKntg';
-        var map = new mapboxgl.Map({
-          container: 'map',
-          style: 'mapbox://styles/bravoyourlif/ck6szj61p01pm1in2o3n5op2r',
-          zoom: 10.7,
-          center: [-73.935242, 40.730610]
-          //center: [37.532600, 127.024612]
-        });
+  	</header>
 
-        map.on('click', function(e) {
-        var features = map.queryRenderedFeatures(e.point, {
-          layers: ['0218-nyc-christmas'] // replace this with the name of the layer
-        });
+    <section> <!--기본 인적사항 나열-->
+      <article> <!--방문한 사람들에게 남기는 메세 -->
+        <h4 style="margin-left: 50px">Comments to visitors</h4>
+        <p class="basic">You're probably here because you're procrastinating something and surfing around random pages. Welcome anyways!</p>
+      </article>
+    </section>
 
-        if (!features.length) {
-          return;
-        }
+    <nav> <!--페이지 하단의 메뉴, 내비게이션 바-->
+      <ul>
+        <li><a href="index.html"><b>Home</b></a></li>
+        <li><a href="booksandmovies.html"><b>Books and Movies</b></a></li>
+        <li><a href="scrap.html"><b>Random Scrap</b></a></li>
+      </ul>
 
-        var feature = features[0];
+      <div class="qa"><a>Q &amp; A</a> <!--페이지 하단의 질의응답 버튼-->
+      </div>
+    </nav>
+</body>
 
-        var popup = new mapboxgl.Popup({ offset: [0, -15] })
-          .setLngLat(feature.geometry.coordinates)
-          .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
-          .addTo(map);
-      });
-      </script>
-
-
-  </body>
 </html>
