@@ -28,7 +28,16 @@
   </head>
   <body>
       <div id="map"></div>
-
+       <nav> <!--페이지 상단의 메뉴, 내비게이션 바-->
+        <ul>
+          <li><a href="index.html"><b>Home</b></a></li>
+          <li><a href="booksandmovies.html"><b>Books and Movies</b></a></li>
+          <li><a href="scrap.html"><b>Random Scrap</b></a></li>
+        </ul>
+      </nav>
+    	<header> <!--이 페이지의 제목 -->
+  		<h1 class="page-title"> Random Scraps </h1><hr>
+  	  </header>
       <script>
       	mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhdm95b3VybGlmIiwiYSI6ImNrNjhsNG9qcDA2NWIzaHFiMWE4Z2JyazYifQ.RvO3pTI0w7vRIA3PlYKntg';
         var map = new mapboxgl.Map({
